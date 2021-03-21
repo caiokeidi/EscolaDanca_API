@@ -7,4 +7,9 @@ class CursosAdmin(admin.ModelAdmin):
     search_fields = ('nome',)
 
 admin.site.register(Curso, CursosAdmin)
-admin.site.register(ImagemCurso)
+
+class ImagensCursosAdmin(admin.ModelAdmin):
+    list_display = ('id', 'curso')
+    list_display_links = ('id', 'curso')
+    search_fields = ('id','curso',)
+admin.site.register(ImagemCurso, ImagensCursosAdmin)
